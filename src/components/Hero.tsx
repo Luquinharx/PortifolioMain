@@ -1,6 +1,8 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ChevronDown, Github, Instagram, Linkedin, Mail } from 'lucide-react';
+"use client"
+
+import type React from "react"
+import { motion } from "framer-motion"
+import { ChevronDown, Github, Instagram, Linkedin } from "lucide-react"
 
 export const Hero: React.FC = () => {
   return (
@@ -27,12 +29,12 @@ export const Hero: React.FC = () => {
             <motion.div
               className="absolute inset-0 rounded-full border-2 border-cyber-primary/60"
               animate={{ rotate: 360 }}
-              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
             />
             <motion.div
               className="absolute inset-2 rounded-full border border-cyber-accent/40"
               animate={{ rotate: -360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
             />
           </motion.div>
 
@@ -65,8 +67,8 @@ export const Hero: React.FC = () => {
             className="relative mb-8"
           >
             <p className="text-lg font-rajdhani text-cyber-silver max-w-2xl mx-auto leading-relaxed">
-              Construindo aplicações web modernas com foco em experiência do usuário e performance.
-              Especializado em desenvolvimento front-end e back-end com tecnologias modernas.
+              Construindo aplicações web modernas com foco em experiência do usuário e performance. Especializado em
+              desenvolvimento front-end e back-end com tecnologias modernas.
             </p>
           </motion.div>
 
@@ -78,13 +80,31 @@ export const Hero: React.FC = () => {
             className="flex justify-center space-x-6 mb-12"
           >
             {[
-              { icon: Github, href: '#', color: 'https://github.com/Luquinharx' },
-              { icon: Linkedin, href: '#', color: 'https://www.linkedin.com/in/lqx/' },
-              { icon: Instagram, href: '#', color: 'https://www.instagram.com/luquinharx/' },
+              {
+                icon: Github,
+                href: "https://github.com/Luquinharx",
+                color: "hover:text-cyber-primary hover:border-cyber-primary/60",
+                label: "GitHub",
+              },
+              {
+                icon: Linkedin,
+                href: "https://www.linkedin.com/in/lqx/",
+                color: "hover:text-cyber-accent hover:border-cyber-accent/60",
+                label: "LinkedIn",
+              },
+              {
+                icon: Instagram,
+                href: "https://www.instagram.com/luquinharx/",
+                color: "hover:text-cyber-light hover:border-cyber-light/60",
+                label: "Instagram",
+              },
             ].map((social, index) => (
               <motion.a
                 key={index}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
                 className={`p-4 rounded-full border-2 border-cyber-silver/30 text-cyber-silver ${social.color} transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-current/20`}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
@@ -105,7 +125,7 @@ export const Hero: React.FC = () => {
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
+          transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
           className="flex flex-col items-center text-cyber-primary"
         >
           <span className="text-sm font-rajdhani mb-2 font-medium">ROLE PARA BAIXO</span>
@@ -119,5 +139,5 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-cyber-primary/5 via-transparent to-cyber-accent/5 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-tl from-cyber-light/5 via-transparent to-cyber-secondary/5 pointer-events-none" />
     </section>
-  );
-};
+  )
+}
