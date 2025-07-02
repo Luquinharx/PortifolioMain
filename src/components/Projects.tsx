@@ -38,7 +38,7 @@ export const Projects: React.FC = () => {
       image: 'https://i.im.ge/2025/06/24/J2HREp.gyn.png',
       technologies: ['TypeScript', 'React', 'Firebase', 'Node.js'],
       features: ['Gestão de alunos', 'Treinos personalizados', 'Dashboard intuitivo', 'Métricas em tempo real'],
-      liveUrl: 'https://gyntask.vercel.app/admin',
+      liveUrl: 'https://gyntask.vercel.app',
       githubUrl: 'https://github.com/Luquinharx/GymTask',
       category: 'Gestão',
       icon: Dumbbell,
